@@ -1,10 +1,10 @@
 # owo
 OwO~! what's this? *nuzzles*
 
-Usage:
+**Usage:**
 
-!owo
+*!owo*
 or
-/8 owo
+*/8 owo*
 
 to toggle enable/disable
