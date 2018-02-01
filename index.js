@@ -4,8 +4,8 @@ const mapOwOify = { 'r':'w',
                     'R':'W',
                     'l':'w',
                     'L':'W',
-                    'n':'ny',
-                    'N':'NY'
+                    'n':'nya',
+                    'N':'NYA'
                 };
 
 module.exports = function OwO(dispatch){
