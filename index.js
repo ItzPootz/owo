@@ -27,7 +27,7 @@ module.exports = function OwO(dispatch){
     dispatch.hook('S_CHAT',2,event=>{
         if(!enabled) return;
 
-        event.message = event.message.replace(/[rlnRLN](?![^<]*\>)/ig, (str) => str = mapOwOify[str]);
+        event.message = event.message.replace(/[rlnRLN](?![^<&]*[\>;])/ig, (str) => str = mapOwOify[str]);
         return true;
     })
 }
