@@ -11,23 +11,25 @@ const mapOwOify = { 'r':'w',
 module.exports = function OwO(dispatch){
     const command = Command(dispatch);
     
-    var enabled = true;
+    var enabled = false;
 
     command.add('owo', () => {
 		if(!enabled){
-            enabled = true;
             command.message('OwO wats dis?');
+            dispatch.hook('S_CHAT',2,Owoify);
+            dispatch.hook('S_WHISPER',1,Owoify);
+            enabled = true;
 		}
 		else{
-            enabled = false;
             command.message('uwu...');
+            dispatch.unhook('S_CHAT',2,Owoify);
+            dispatch.unhook('S_WHISPER',1,Owoify);
+            enabled = false;
         }
     })
     
-    dispatch.hook('S_CHAT',2,event=>{
-        if(!enabled) return;
-
+    function Owoify(event){
         event.message = event.message.replace(/[rlnRLN](?![^<&]*[\>;])/ig, (str) => str = mapOwOify[str]);
         return true;
-    })
+    }
 }
