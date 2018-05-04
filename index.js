@@ -22,8 +22,8 @@ function OwOify(event) {
 function commandOwO() {
   if (this.enabled) {
     this.command.message("uwu...");
-    this.dispatch.unhook("S_CHAT", 2, this.OwOchat);
-    this.dispatch.unhook("S_WHISPER", 1, this.OwOwhisper);
+    this.dispatch.unhook(this.OwOchat);
+    this.dispatch.unhook(this.OwOwhisper);
     this.enabled = false;
   }
   else {
